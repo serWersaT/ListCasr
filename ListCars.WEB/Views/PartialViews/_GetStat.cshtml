@@ -1,0 +1,40 @@
+﻿<div>
+    <span>Список отчетов</span>
+    <select class="form-control" id="ListReports" onchange="OptionFiltre()">
+        <option value="0">Выберите отчет</option>
+        <option value="1">Общая статистика</option>
+        <option value="2">Статистика за период</option>
+    </select>
+
+
+    <div class="row calendar"  style="display:none">
+        <span class="col-sm-4">Введите марку авто</span>
+        <input type="text" class="col-sm-8 form-control" id="ModelCar">
+    </div>
+
+    <button class="btn btn-default" id="btnReports" onclick="SelectReports()">Показать отчет</button>
+
+    <div id="GetReports">
+        <table class='table-condensed col-sm-12 ReportTable' id="GeneralStatTable" style="display:none">
+            <tr>
+                <td>Количество записей</td>
+                <td>Дата первого добавления записи</td>
+                <td>Дата последнего добавления записи</td>
+            </tr>
+        </table>
+
+
+        <table class='table-condensed col-sm-12 ReportTable' id="CarReportTable" style="display:none">
+            <tr>
+                <td>Марка авто</td>
+                <td>Дата поступления</td>
+                <td>Последнее изменение</td>
+                <td>Номер</td>
+                <td>Цвет</td>
+                <td>Статус</td>
+            </tr>
+        </table>
+
+        <button class="btn" onclick="getexcel()" id="btntoexcel" style="display:none">Скачать</button>
+    </div>
+</div>

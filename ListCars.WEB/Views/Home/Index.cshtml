@@ -1,0 +1,56 @@
+﻿@{
+}
+@{
+    Layout = "_Layout";
+}
+
+
+<div class="row">
+    <button class="btn btn-default col-sm-3" onclick="GetPartials('GetAddCars'); VisibleAddCars()">Добавить автомобиль</button>
+    <button class="btn btn-default col-sm-3" onclick="GetPartials('GetAllCars'); VisibleAllCars()">Показать все автомобили</button>
+    <button class="btn btn-default col-sm-3" onclick="GetPartials('GetStat'); VisibleStat()">Показать статистику</button>
+</div>
+
+
+<div class="modal" tabindex="-1" role="dialog" id="CarsModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Обновление данных</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="UpdateCarsHide()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="UpdateCarsModel">
+                <div class="row col-sm-12">
+                    <span class="col-sm-6">Номер:</span>
+                    <input type="text" class="form-control col-sm-6" id="modalNumberCars" />
+                </div>
+                <div class="row col-sm-12">
+                    <span class="col-sm-6">Модель:</span>
+                    <input type="text" class="form-control col-sm-6" id="modalModelCars" />
+                </div>
+                <div class="row col-sm-12">
+                    <span class="col-sm-6">Цвет:</span>
+                    <input type="text" class="form-control col-sm-6" id="modalColorCars" />
+                </div>
+                <div class="row col-sm-12">
+                    <span class="col-sm-6">Год выпуска:</span>
+                    <input type="text" class="form-control col-sm-6" id="modalYearCars" />
+                </div>
+                <div class="row col-sm-12">
+                    <span class="col-sm-6">Статус:</span>
+                    <input type="text" class="form-control col-sm-6" id="modalActiveCars" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="UpdateCars()">Обновить</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="UpdateCarsHide()">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="GetAllCars" class="GetPartial" style="display:none"></div>
+<div id="GetAddCars" class="GetPartial" style="display:none"></div>
+<div id="GetStat" class="GetPartial" style="display:none"></div>
