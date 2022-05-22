@@ -29,7 +29,7 @@ function GetAllCars() {
         }
     });
 }
-
+  
 
 function getexcel() {
     if ($("#GeneralStatTable").is(':visible') == true) $("#GeneralStatTable").table2excel({filename: "Table.xls"});
